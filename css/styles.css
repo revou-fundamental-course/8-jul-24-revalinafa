@@ -1,3 +1,7 @@
+* {
+  font-family: system-ui;
+}
+
 body {
   background-image: url("./background.jpg");
   background-size: cover;
@@ -77,4 +81,7 @@ input[type="number"]:focus {
 }
 p {
   text-align: justify;
+}
+.general-information {
+  text-align: center;
 }
