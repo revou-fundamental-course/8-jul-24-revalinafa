@@ -37,14 +37,14 @@ document
       if (bmi > 0 && bmi <= 100) {
         displayResult(bmi, ideal, weight, height, age, gender);
       } else {
-        alert("Masukkan tinggi dan berat badan yang valid!");
+        alert("Masukkan tinggi dan berat badan benar");
       }
     } else if (age < 0) {
-      alert("Masukkan usia, tinggi dan berat badan yang valid!");
+      alert("Masukkan usia, tinggi dan berat badan benar");
     } else if (gender == "") {
-      alert("Pilih jenis kelamin anda!");
+      alert("Pilihlah jenis kelamin anda!");
     } else {
-      alert("Masukkan tinggi dan berat badan yang valid!");
+      alert("Masukkan tinggi dan berat badan benar");
     }
   });
 
@@ -55,21 +55,6 @@ document
     document.getElementById("result-container").style.display = "none";
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
-
-// Back to top button (tombol yang jika dipencet akan membawa user ke top of page)
-window.addEventListener("scroll", function () {
-  const backToTopButton = document.getElementById("back-to-top");
-  if (window.scrollY > 100) {
-    backToTopButton.style.display = "block";
-  } else {
-    backToTopButton.style.display = "none";
-  }
-});
-
-// Function scroll to top yang menjadi function yang di run saat button back to top di klik
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
 
 // Function untuk menampilkan hasil dari perhitungan BMI
 function displayResult(bmi, ideal, weight, height, age, gender) {
@@ -119,7 +104,7 @@ function displayResult(bmi, ideal, weight, height, age, gender) {
 
   // Attach download event
   document
-    .querySelector(".downloadButton")
+    .querySelector(".button-download")
     .addEventListener("click", function () {
       generatePDF(weight, height, age, gender, bmi, resultLabel);
     });
@@ -137,11 +122,11 @@ function generatePDF(weight, height, age, gender, bmi, resultLabel) {
   doc.text(`BMI: ${bmi}`, 10, 60);
   doc.text(`Kategori: ${resultLabel}`, 10, 70);
 
-  doc.save("hasil_bmi.pdf");
+  doc.save("bmi_anda.pdf");
 }
 
 document
-  .querySelector(".button konsultasi")
+  .querySelector(".button-konsultasi")
   .addEventListener("click", function () {
     window.open(
       "https://ilmugiziku.com/2021/11/30/berbagai-aplikasi-gizi-mahasiswa-gizi-wajib-tahu/",
@@ -150,7 +135,7 @@ document
   });
 
 document
-  .querySelector(".button registrasi")
+  .querySelector(".button-registrasi")
   .addEventListener("click", function () {
     window.open(
       "https://www.halodoc.com/artikel/chat-dokter-spesialis-gizi-online-pengertian-dan-cara-kerjanya",
