@@ -3,8 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <!-- Judul Website -->
+    <title>Kalkulator BMI</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <!-- Fitur untuk mendownload hasil bmi -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
   </head>
 
   <body>
@@ -26,9 +29,9 @@
           </p>
         </article>
 
-        <!--Form-->
+        <!--Form pengisian data-->
         <article>
-          <form>
+          <form id="form-bmi">
             <div class="input-group">
               <div class="input-title">Jenis Kelamin</div>
               <div class="radio-group">
@@ -95,66 +98,65 @@
           </header>
 
           <!--Result Section-->
-          <section class="result-section">
+          <section
+            class="resultContainer"
+            id="result-container"
+            style="display: none"
+          >
             <h3>Hasil Result Adalah:</h3>
-            <h2>24.7</h2>
-
-            <div class="button-group">
-              <button class="button download">Download Hasil BMI</button>
+            <div class="resultContent">
+              <p class="resultLabel">Berat Badan Lebih</p>
+              <p class="resultValue" id="bmi-value">24.7</p>
+              <p class="resultDescription">
+                Anda memiliki berat badan berlebih
+              </p>
+              <div class="button-group">
+                <button class="button download">Download Hasil BMI</button>
+              </div>
             </div>
 
-            <h3>Anda Memiliki Berat Badan berlebih</h3>
-          </section>
+            <!--Result Article-->
+            <article>
+              <p id="result-bb-ideal"></p>
+              <!-- Paragraph detail yang ditampilkan berdasarkan hasil perhitungan BMI yang di handle oleh JS -->
+              <p id="result-detailed-description"></p>
+              <div class="button-group">
+                <button class="button konsultasi">
+                  Konsultasi Ahli Via Aplikasi
+                </button>
+                <button class="button registrasi">
+                  Registrasi Online Ahli Gizi
+                </button>
+              </div>
+              <p>
+                BMI tidak sepenuhnya mewakili diagnosa menyeluruh dari kesehatan
+                tubuh dan resiko penyakit seseorang. Anda perlu konsultasi lebih
+                lanjut mengenai resiko dan kekhawatiran Anda terkait dengan
+                berat badan Anda.
+              </p>
+            </article>
 
-          <!--Result Article-->
-          <article>
-            <p>
-              Hasil BMI diantara 23 dan 25
-              <br />
-              <br />
-              Anda berada dalam kategori overweight atau berat badan berlebih.
-              Cara terbaik untuk menurunkan berat badan adalah dengan mengatur
-              kalor makanan yang dikonsumsi dan berolahraga.
-              <br />
+            <!--General Information-->
+            <section class="general-information">
+              <h3>Beberapa penyakit yang berasal dari kegemukan</h3>
+              <h4>Diabetes</h4>
+              <h4>Hipertensi</h4>
+              <h4>Sakit Jantung</h4>
+              <h4>Osteoarthritis</h4>
 
-              Jika BMI Anda berada dalam kategori ini maka Anda dianjurkan untuk
-              menurunkan berat badan hingga batas normal.
-            </p>
-            <div class="button-group">
-              <button class="button konsultasi">
-                Konsultasi Ahli Via Aplikasi
-              </button>
-              <button class="button registrasi">
-                Registrasi Online Ahli Gizi
-              </button>
-            </div>
-            <p>
-              BMI tidak sepenuhnya mewakili diagnosa menyeluruh dari kesehatan
-              tubuh dan resiko penyakit seseorang. Anda perlu konsultasi lebih
-              lanjut mengenai resiko dan kekhawatiran Anda terkait dengan berat
-              badan Anda.
-            </p>
-          </article>
-
-          <!--General Information-->
-          <section class="general-information">
-            <h3>Beberapa penyakit yang berasal dari kegemukan</h3>
-            <h4>Diabetes</h4>
-            <h4>Hipertensi</h4>
-            <h4>Sakit Jantung</h4>
-            <h4>Osteoarthritis</h4>
-
-            <div class="button-group">
-              <button class="button konsultasi">
-                Konsultasi Dokter Via Aplikasi
-              </button>
-              <button class="button registrasi">
-                Registrasi Online Sekarang
-              </button>
-            </div>
+              <div class="button-group">
+                <button class="button konsultasi">
+                  Konsultasi Dokter Via Aplikasi
+                </button>
+                <button class="button registrasi">
+                  Registrasi Online Sekarang
+                </button>
+              </div>
+            </section>
           </section>
         </article>
       </section>
     </main>
+    <script src="js/scripts.js"></script>
   </body>
 </html>
