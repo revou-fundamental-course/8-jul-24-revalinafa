@@ -85,3 +85,14 @@ p {
 .general-information {
   text-align: center;
 }
+h1 {
+  text-align: center;
+}
+h3 {
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .main-content {
+    flex-direction: column;
+  }
+}

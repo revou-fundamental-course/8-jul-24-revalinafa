@@ -75,22 +75,22 @@ function displayResult(bmi, ideal, weight, height, age, gender) {
     resultLabel = "Kekurangan Berat Badan";
     resultDescription = "Anda memiliki berat badan kurang.";
     detailedDescription =
-      "Anda berada dalam kategori kekurangan berat badan. Disarankan untuk meningkatkan asupan kalori dan menjalani pola makan sehat untuk mencapai berat badan yang normal.";
+      "Anda berada dalam kategori kekurangan berat badan. Anda disarankan untuk meningkatkan asupan kalori dan menjalani pola makan sehat untuk mencapai berat badan yang normal.";
   } else if (bmi >= 18.5 && bmi < 24.9) {
-    resultLabel = "Normal (Sehat)";
-    resultDescription = "Anda memiliki berat badan normal (sehat).";
+    resultLabel = "Normal";
+    resultDescription = "Anda memiliki berat badan normal.";
     detailedDescription =
-      "Anda berada dalam kategori berat badan normal. Pertahankan pola makan seimbang dan rutin berolahraga untuk menjaga kesehatan.";
+      "Anda berada dalam kategori berat badan normal. Pertahankan pola makan seimbang dan rutin berolahraga untuk menjaga kesehatan tubuh Anda.";
   } else if (bmi >= 25 && bmi < 29.9) {
     resultLabel = "Berat Badan Lebih";
     resultDescription = "Anda memiliki berat badan berlebih.";
     detailedDescription =
-      "Anda berada dalam kategori berat badan berlebih. Disarankan untuk mengatur pola makan dan rutin berolahraga untuk menurunkan berat badan ke batas normal.";
+      "Anda berada dalam kategori berat badan berlebih. Anda disarankan untuk mengatur pola makan dan rutin berolahraga untuk menurunkan berat badan ke batas normal.";
   } else if (bmi >= 30) {
     resultLabel = "Obesitas";
-    resultDescription = "Anda memiliki obesitas.";
+    resultDescription = "Anda memiliki berat badan obesitas.";
     detailedDescription =
-      "Anda berada dalam kategori obesitas. Sangat disarankan untuk berkonsultasi dengan ahli gizi dan dokter untuk rencana penurunan berat badan yang sehat.";
+      "Anda berada dalam kategori obesitas. Anda sangat disarankan untuk berkonsultasi dengan ahli gizi dan dokter untuk rencana penurunan berat badan yang sehat.";
   }
 
   bmiValueElement.textContent = bmi;
@@ -128,19 +128,13 @@ function generatePDF(weight, height, age, gender, bmi, resultLabel) {
 document
   .querySelector(".button-konsultasi")
   .addEventListener("click", function () {
-    window.open(
-      "https://ilmugiziku.com/2021/11/30/berbagai-aplikasi-gizi-mahasiswa-gizi-wajib-tahu/",
-      "_blank"
-    );
+    window.open("https://www.instagram.com/gizigo.id/", "_blank");
   });
 
 document
   .querySelector(".button-registrasi")
   .addEventListener("click", function () {
-    window.open(
-      "https://www.halodoc.com/artikel/chat-dokter-spesialis-gizi-online-pengertian-dan-cara-kerjanya",
-      "_blank"
-    );
+    window.open("https://ahligizi.id/", "_blank");
   });
 
 // Menambahkan event listener ke semua input untuk mendeteksi jika ada perubahan di salah satu input
